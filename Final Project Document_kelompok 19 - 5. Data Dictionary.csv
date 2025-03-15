@@ -1,0 +1,86 @@
+6.1.,Employees,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,Int,NNNNNN,6,Angka unik untuk identifikasi employee,118633
+,first_name,Varchar,,25,Nama depan untuk employee,John
+,last_name,Varchar,,25,Nama belakang untuk employee,Doe
+,gender,Varchar,"""Male"" or ""Female""",10,Jenis kelamin untuk employee,Male
+,email,Varchar,,25,Email untuk employee,john@mail.com
+,phone,Varchar,NNNNNN,20,Phone number untuk employee,82663821399
+,hire_date,Date,YYYY/MM/DD,,Hire date didapatkan dari pertama kali gabung,8/18/2001
+,salary,Int,,,Salary untuk dari employee,50000
+,manager,Int,NNNNNN,6,Manager diambil dari id employee,117798
+,job,Varchar,,10,Job diambil dari id di table Job,AppDevJr
+,department,int,,,Department diambil dari id di table department,1
+,,,,,,
+6.2.,Job Histories,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,employee,Int,NNNNNN,6,employee diambil dari id pada tabel employees,118633
+,start_date,Date,YYYY/MM/DD,,Start date untuk tanggal awal,9/8/2001
+,end_date,Date,YYYY/MM/DD,,Start date untuk tanggal akhir,8/21/2001
+,status,varchar,,10,,
+,job,Varchar,,10,job diambil dari tabel jobs,AppDevJr
+,department,Int,,,department diambil dari id di table department,1
+,,,,,,
+6.3.,departments,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,Int,,,Angka unik untuk identifikasi department,1
+,nama,Varchar,,30,nama untuk deparment,Sosmed
+,location,Int,,,location diambil dari id tabel location,2
+,,,,,,
+6.4.,Jobs,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,Varchar,,10,Kode unik unutk identifikasi jobs,AppDevJr
+,title,Varchar,,35,title dari jobs,Sosmed
+,min_salary,Int,,,gaji minimum yang diterima,1000000
+,max_salary,Int,,,gaji maximum yang diterima,2500000
+,,,,,,
+6.5.,Locations,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,int,,,Angka unit untuk identifikasi locations,
+,street address,varchar,,40,street address untuk memasukkan alamat,
+,postal code,varchar,,12,postal code untuk locations,
+,city,varchar,,30,city untuk locations,Surabaya
+,state province,varchar,,25,state province,Jawa Timur
+,country,char,,3,country untuk menunjukan sebuah negara,IND
+,,,,,,
+6.6.,Accounts,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,int,,,angka unik untuk identifikasi akun,11
+,username,varchar,,25,nama pengguna/pemilik akun,@heihei
+,password,varchar,,255,"kode akses unik untuk menggunakan akun/login dimana harus memiliki minimal 8 karakter, 1 huruf besar, 1 huruf kecil, 1 angka, dan 1 simbol",Lupappassword
+,otp,int,,,"one time password,biasanya berupa kode unik",2701
+,is_expired,bit,"Integer that can be 0, 1, or NULL",,"intger yang menerima 1,0,dan null",null
+,is_used,datetime,YYYY-MM-DD,,menyimpan informasi tanggal dan waktu,2003-03-03
+,,,,,,
+6.7.,Countries,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,char,,,angka unik untuk identifikasi countrie,CRB
+,nama,Varchar,,40,nama countries,jawa Barat
+,region,Int,,,wilayah dari nama countries/kota,62
+,,,,,,
+6.8.,Regions,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,int,,,angka unik untuk identifikasi region,99
+,nama,Varchar,,25,nama region/wilayah yang mencakup berbagai countrie/kota,Bdg
+,,,,,,
+6.9.,Account Roles,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,int,,,angka unik untuk identifikasi Acount Roles,3
+,account,int,,,no User yang digunakan,77
+,role,Int,,,no peran atau kedudukan(status,7
+,,,,,,
+6.10.,Roles,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,int,,,angka unik untuk identifikasi Roles,7
+,nama,Varchar,,50,untuk menamakan sebuah peran,Admin
+,,,,,,
+6.11.,Roles Permissions,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,int,,,"Pk,angka unik untuk identifikasi Roles permission",1.2.3.4.5
+,role,int,,,menyimpan id peran pengguna,7
+,permission,Int,,,menyimpan id izin pengguna,diizinkan
+,,,,,,
+6.12.,Permissions,,,,,
+,Field Name,Data Type,Data Format,Length,Description,Example
+,id,int,,,"Pk,angka unik untuk identifikasi perizinan","1,2,3,4"
+,nama,Varchar,,100,menyimpan nama perizinan,izinkan
